@@ -5,6 +5,8 @@ pygame.init()
 mixer.music.load('background.wav')
 mixer.music.play(-1)
 
+background= pygame.image.load('2049.jpg')
+
 BLACK=(0,0,0)
 WHITE=(255, 255,255)
 RED=(255,0,0)
@@ -37,6 +39,7 @@ def drect(screen, x, y):
 done= False
 clock= pygame.time.Clock()
 while not done:
+
     for event in pygame.event.get():
         if event.type==pygame.QUIT:
             done= True
@@ -50,6 +53,7 @@ while not done:
                 rect_change_x=0
 
     screen.fill(BLACK)
+    screen.blit(background, (0, 0))
     rect_x += rect_change_x
     rect_y += rect_change_y
     ball_x += ball_change_x
